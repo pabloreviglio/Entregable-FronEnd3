@@ -14,10 +14,16 @@ import React,{useState} from 'react'
 export default function Item(props) {
    
   const [value, setValue] = useState(props.stock)
+  
   let stockActual=""
+  let buttonName="Comprar"
+  let buttonDisable = false
+
 
   if (!value>0){
   stockActual=<span>{`${"Agotado"}`}</span>
+  buttonName="Sin Stock"
+  buttonDisable = true
   }else{
   stockActual=value.toString();
   }
@@ -34,7 +40,7 @@ export default function Item(props) {
       <h3>{props.nombre}</h3>
       <p>{props.descripcion}</p>
       <h5>En stock: {stockActual}</h5>
-      <button onClick={comprar}>Comprar</button>
+      <button disabled={buttonDisable} onClick={comprar}>{buttonName}</button>
     </div>
   )
 }
