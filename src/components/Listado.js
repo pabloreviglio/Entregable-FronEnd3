@@ -19,6 +19,7 @@ export default function Listado({sumar}) {
       id={item.id}
       nombre={item.producto.nombre}
       descripcion={item.producto.descripcion}
+      url={item.producto.url}
       stock={item.stock}
       sumar={sumar}
       />

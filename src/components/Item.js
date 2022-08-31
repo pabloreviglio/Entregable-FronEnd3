@@ -37,6 +37,7 @@ export default function Item(props) {
    
   return (
     <div className='producto'>
+      <img src={props.url}/>
       <h3>{props.nombre}</h3>
       <p>{props.descripcion}</p>
       <h5>En stock: {stockActual}</h5>
